@@ -18,23 +18,34 @@ class Feedback extends React.Component {
 		bad: this.props.bad,
 	}
 
-	hendlerIncrementGood = () => {
-		this.setState((prevState) => {
-			return { good: prevState.good + 1 }
-		})
-	}
+	// hendlerIncrementGood = () => {
+	// 	this.setState((prevState) => {
+	// 		return { good: prevState.good + 1 }
+	// 	})
+	// }
 
-	hendlerIncrementNeutral = () => {
-		this.setState((prevState) => {
-			return { neutral: prevState.neutral + 1 }
-		})
-	}
+	// hendlerIncrementNeutral = () => {
+	// 	this.setState((prevState) => {
+	// 		return { neutral: prevState.neutral + 1 }
+	// 	})
+	// }
 
-	hendlerIncrementBad = () => {
-		this.setState((prevState) => {
-			return { bad: prevState.bad + 1 }
-		})
-	}
+	// hendlerIncrementBad = () => {
+	// 	this.setState((prevState) => {
+	// 		return { bad: prevState.bad + 1 }
+	// 	})
+	// }
+
+	// leaveFeedback = () => {
+	// 	this.setState((prevState) => {
+	// 		return { option: prevState.option + 1 }
+	// 	})
+	// }
+	// deleteTodo = (todoId) => {
+	// 	this.setState((prevState) => ({
+	// 		todos: prevState.todos.filter((todo) => todo.id !== todoId),
+	// 	}))
+	// }
 
 	countTotalFeedback() {
 		return this.state.good + this.state.neutral + this.state.bad
@@ -52,13 +63,16 @@ class Feedback extends React.Component {
 		const good = this.state.good
 		const neutral = this.state.neutral
 		const bad = this.state.bad
+		const options = this.state
 		return (
 			<>
 				<h1>Please leave feedback</h1>
 				<FeedbackOptions
-					onIncrementGood={this.hendlerIncrementGood}
-					onIncrementNeutral={this.hendlerIncrementNeutral}
-					onIncrementBad={this.hendlerIncrementBad}
+					options={options}
+					// onLeaveFeedback={this.leaveFeedback()}
+					// onIncrementGood={this.hendlerIncrementGood}
+					// onIncrementNeutral={this.hendlerIncrementNeutral}
+					// onIncrementBad={this.hendlerIncrementBad}
 				/>
 
 				<h2>Statistics</h2>
